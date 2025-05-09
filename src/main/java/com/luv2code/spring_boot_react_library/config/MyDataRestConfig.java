@@ -35,7 +35,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         /* Configure CORS mapping */
         cors.addMapping(config.getBasePath() + "/**")
-                .allowedOrigins(theAllowedOrigins);
+                .allowedOrigins(theAllowedOrigins)
+                .allowedOrigins("https://books-apis-dvy1.onrender.com");
+
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
