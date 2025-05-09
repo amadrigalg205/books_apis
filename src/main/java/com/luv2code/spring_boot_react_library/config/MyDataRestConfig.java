@@ -35,7 +35,7 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         /* Configure CORS mapping */
         cors.addMapping(config.getBasePath() + "/**")
-                .allowedOrigins("https://luvtoread.vercel.app", "https://dev-56166987.okta.com")
+                .allowedOrigins("https://luvtoread.vercel.app")
                 .allowedHeaders("*");
     }
 
