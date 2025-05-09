@@ -3,16 +3,19 @@ package com.luv2code.spring_boot_react_library.config;
 import com.luv2code.spring_boot_react_library.entity.Book;
 import com.luv2code.spring_boot_react_library.entity.Message;
 import com.luv2code.spring_boot_react_library.entity.Review;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    private String theAllowedOrigins = "http://localhost:3000";
+    @Value("${cross.origin.link}")
+    private String theAllowedOrigins; //"http://localhost:3000";
 
     @Override
     public  void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
