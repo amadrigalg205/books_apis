@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    //@Value("${cross.origin.link}")
     //private String theAllowedOrigins  = "https://luvtoread.vercel.app";
 
     @Override
@@ -34,10 +33,9 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(Message.class, config, theUnsupportedActions);
 
         /* Configure CORS mapping */
-        /*
         cors.addMapping(config.getBasePath() + "/**")
-                .allowedOrigins("https://luvtoread.vercel.app")
-                .allowedHeaders("*");*/
+                .allowedOrigins("*")
+                .allowedHeaders("*");
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
