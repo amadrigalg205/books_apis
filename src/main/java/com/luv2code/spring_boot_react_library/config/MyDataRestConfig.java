@@ -34,9 +34,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         disableHttpMethods(Message.class, config, theUnsupportedActions);
 
         /* Configure CORS mapping */
+        /*
         cors.addMapping(config.getBasePath() + "/**")
                 .allowedOrigins("https://luvtoread.vercel.app")
-                .allowedHeaders("*");
+                .allowedHeaders("*");*/
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {

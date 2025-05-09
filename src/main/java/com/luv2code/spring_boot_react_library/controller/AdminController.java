@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 //@CrossOrigin("http://localhost:3000")
-@CrossOrigin("https://luvtoread.vercel.app")
+//@CrossOrigin("https://luvtoread.vercel.app")
 @RestController
 @RequestMapping("/api/admin")
 public class AdminController {
