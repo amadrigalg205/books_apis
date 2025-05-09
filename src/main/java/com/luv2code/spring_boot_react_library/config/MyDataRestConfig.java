@@ -35,10 +35,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         /* Configure CORS mapping */
         cors.addMapping(config.getBasePath() + "/**")
-                .allowedOrigins("https://luvtoread.vercel.app")
-                .allowedOrigins("https://dev-56166987.okta.com/api/v1/authn")
+                .allowedOrigins("https://luvtoread.vercel.app", "https://dev-56166987.okta.com/api/v1/authn")
                 .allowedHeaders("*");
-
     }
 
     private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
